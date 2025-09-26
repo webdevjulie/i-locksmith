@@ -257,23 +257,30 @@
 
                     <!-- Other Links -->
                     <a href="faq.html" 
-                        class="relative text-professional-black font-medium transition-colors duration-300 hover:text-brand-red 
-                                after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">
+                    class="nav-link relative text-professional-black font-medium transition-colors duration-300 hover:text-brand-red 
+                            after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-brand-red 
+                            after:transition-all after:duration-300 hover:after:w-full">
                         FAQ
-                        </a>
-                        <a href="reviews.html" 
-                        class="relative text-professional-black font-medium transition-colors duration-300 hover:text-brand-red 
-                                after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">
+                    </a>
+
+                    <a href="reviews.html" 
+                    class="nav-link relative text-professional-black font-medium transition-colors duration-300 hover:text-brand-red 
+                            after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-brand-red 
+                            after:transition-all after:duration-300 hover:after:w-full">
                         Reviews
-                        </a>
-                        <a href="about.html" 
-                        class="relative text-professional-black font-medium transition-colors duration-300 hover:text-brand-red 
-                                after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">
+                    </a>
+
+                    <a href="about.html" 
+                    class="nav-link relative text-professional-black font-medium transition-colors duration-300 hover:text-brand-red 
+                            after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-brand-red 
+                            after:transition-all after:duration-300 hover:after:w-full">
                         About
-                        </a>
-                        <a href="contact.html" 
-                        class="relative text-professional-black font-medium transition-colors duration-300 hover:text-brand-red 
-                                after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">
+                    </a>
+
+                    <a href="contact.html" 
+                    class="nav-link relative text-professional-black font-medium transition-colors duration-300 hover:text-brand-red 
+                            after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-brand-red 
+                            after:transition-all after:duration-300 hover:after:w-full">
                         Contact
                     </a>
                 </div>
@@ -1452,5 +1459,21 @@
             },
         });
     </script>
+
+    <script>
+        // Get current path (e.g., /about.html)
+        const currentPath = window.location.pathname.split("/").pop();
+
+        // Select all nav links
+        document.querySelectorAll(".nav-link").forEach(link => {
+            const linkPath = link.getAttribute("href");
+
+            if (linkPath === currentPath) {
+            link.classList.add("text-brand-red");
+            link.classList.add("after:w-full");
+            }
+        });
+    </script>
+    
 </body>
 </html>
